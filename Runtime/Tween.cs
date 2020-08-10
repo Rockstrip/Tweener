@@ -9,7 +9,7 @@ namespace Tweener
         protected readonly GameObject Target;
         internal readonly Tween Previous;
         
-        protected Tween(GameObject target)
+        private protected Tween(GameObject target)
         {
             Previous = null;
             Target = target;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Tweener
 {
-    internal abstract class ContinuousTween : Tween
+    public abstract class ContinuousTween : Tween
     {
         private readonly float duration;
 

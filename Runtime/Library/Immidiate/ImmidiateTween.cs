@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tweener
 {
-    internal abstract class ImmidiateTween : Tween
+    public abstract class ImmidiateTween : Tween
     {
         protected ImmidiateTween(Tween previous) : base(previous)
         {

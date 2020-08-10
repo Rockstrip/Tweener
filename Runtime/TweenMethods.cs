@@ -60,6 +60,10 @@ namespace Tweener
 
         #region System
 
+        public Tween Next(Tween next)
+        {
+            return new NextTween(this, next);
+        }
         public Tween Parallel(params Tween[] threads)
         {
             return new ParallelTween(this, threads);

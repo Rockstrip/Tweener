@@ -1,0 +1,17 @@
+{
+  "name": "com.serhiyhelp.tweener",
+  "version": "1.0.0",
+  "displayName": "Tweener",
+  "description": "This is an package that allows animate objects through code",
+  "unity": "2019.1",
+  "dependencies": {
+    "com.unity.textmeshpro": ""
+  },
+  "keywords": [
+    "tween",
+    "animation"
+  ],
+  "author": {
+    "name": "Serhiy Serhiychuk"
+  }
+}

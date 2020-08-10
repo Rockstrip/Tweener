@@ -2,11 +2,11 @@
 
 namespace Tweener
 {
-    internal class SetScaleTween : ImmidiateTween
+    internal class SetScaleUiTween : ImmidiateTween
     {
         private readonly Vector2 scale;
 
-        public SetScaleTween(Tween previous, Vector2 scale) : base(previous)
+        public SetScaleUiTween(Tween previous, Vector2 scale) : base(previous)
         {
             this.scale = scale;
         }

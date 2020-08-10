@@ -2,11 +2,11 @@
 
 namespace Tweener
 {
-    internal class SetPositionTween : ImmidiateTween
+    internal class SetPositionUiTween : ImmidiateTween
     {
         private readonly Vector2 position;
         
-        public SetPositionTween(Tween previous, Vector2 position) : base(previous)
+        public SetPositionUiTween(Tween previous, Vector2 position) : base(previous)
         {
             this.position = position;
         }

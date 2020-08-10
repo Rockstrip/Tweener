@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 namespace Tweener
 {
-    internal class SetColorTween : ImmidiateTween
+    internal class SetColorUiTween : ImmidiateTween
     {
         private readonly Color color;
         private readonly Image image;
         private readonly TextMeshProUGUI text;
         
-        public SetColorTween(Tween previous, Color color) : base(previous)
+        public SetColorUiTween(Tween previous, Color color) : base(previous)
         {
             this.color = color;
             

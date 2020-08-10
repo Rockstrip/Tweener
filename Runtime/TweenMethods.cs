@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Tweener
 {
     public abstract partial class Tween
     {
+        #region Immidiate
+    
         public Tween Enable()
         {
             return new EnableTween(this);
@@ -17,61 +20,57 @@ namespace Tweener
             return new DestroyTween(this);
         }
 
-        public Tween SetColor(Color color)
+        public Tween SetColorUi(Color color)
         {
-            return new SetColorTween(this, color);
+            return new SetColorUiTween(this, color);
         }
-        public Tween SetPosition(Vector2 point)
+        public Tween SetPositionUi(Vector2 point)
         {
-            return new SetPositionTween(this, point);
+            return new SetPositionUiTween(this, point);
         }
-        public Tween SetRotation(float angle)
+        public Tween SetRotationUi(float angle)
         {
-            return new SetRotationTween(this, angle);
+            return new SetRotationUiTween(this, angle);
         }
-        public Tween SetScale(Vector2 scale)
+        public Tween SetScaleUi(Vector2 scale)
         {
-            return new SetScaleTween(this, scale);
+            return new SetScaleUiTween(this, scale);
+        }
+        
+        #endregion
+
+        #region Continuous
+
+        public Tween MoveTo(Vector3 point, float duration)
+        {
+            return new MoveToTween(this, point, duration);
         }
 
-        public Tween MoveTo(Vector2 point, float duration)
+        public Tween MoveTween(Vector3 localPoint, float duration)
         {
-            return  new MoveToTween(this, point, duration);
-        }
-        public Tween ScaleTo(Vector2 scale, float duration)
-        {
-            return  new ScaleToTween(this, scale, duration);
-        }
-        public Tween RotateTo(float angle, float duration)
-        {
-            return  new RotateToTween(this, angle, duration);
+            return new MoveTween(this, localPoint, duration);
         }
         
         public Tween Wait(float duration)
         {
             return new WaitTween(this, duration);
         }
-        
-        public Tween Fade(float duration)
-        {
-            return  new FadeTween(this, duration);
-        }
-        public Tween Rotate(float angle, float duration)
-        {
-            return new RotateTween(this, angle, duration);
-        }
-        public Tween Move(Vector2 localPoint, float duration)
-        {
-            return new MoveTween(this, localPoint, duration);
-        }
-        public Tween Paint(Color color, float duration)
-        {
-            return  new PaintTween(this, color, duration);
-        }
+
+        #endregion
+
+        #region System
+
         public Tween Parallel(params Tween[] threads)
         {
             return new ParallelTween(this, threads);
         }
+
+        public Tween Execute(Action<GameObject> action)
+        {
+            return  new ExecuteTween(this, action);
+        }
+
+        #endregion
         
     }
 }

@@ -2,11 +2,11 @@
 
 namespace Tweener
 {
-    internal class SetRotationTween : ImmidiateTween
+    internal class SetRotationUiTween : ImmidiateTween
     {
         private readonly float angle;
 
-        public SetRotationTween(Tween previous, float angle) : base(previous)
+        public SetRotationUiTween(Tween previous, float angle) : base(previous)
         {
             this.angle = angle;
         }

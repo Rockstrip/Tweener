@@ -2,7 +2,7 @@
   "name": "com.serhiyhelp.tweener",
   "version": "1.0.4",
   "displayName": "Tweener",
-  "description": "This is an package that allows animate objects through code",
+  "description": "https://github.com/SergiyHelp/Tweener.git \n This is an package that allows animate objects through code",
   "unity": "2019.1",
   "dependencies": {
     "com.unity.textmeshpro": ""

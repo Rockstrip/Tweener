@@ -5,7 +5,7 @@ namespace Tweener
 {
     internal class StartTween : Tween
     {
-        public StartTween(GameObject target) : base(target)
+        public StartTween(Tween previous, GameObject target) : base(previous, target)
         {
         }
 

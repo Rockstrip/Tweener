@@ -9,9 +9,9 @@ namespace Tweener
         protected readonly GameObject Target;
         internal readonly Tween Previous;
         
-        private protected Tween(GameObject target)
+        private protected Tween(Tween previous, GameObject target)
         {
-            Previous = null;
+            Previous = previous;
             Target = target;
         }
         protected Tween(Tween previous)
@@ -20,12 +20,16 @@ namespace Tweener
             Target = previous.Target;
         }
 
-        public static Tween Create(GameObject target)
+        public static Tween CreateFor(GameObject target)
         {
-            return new StartTween(target);
+            return new StartTween(null ,target);
         }
-        
-        
+
+        public Tween For(GameObject target)
+        {
+            return new StartTween(this, target);
+        }
+
         public void Run()
         {
             TweenMaster.Common.StartCoroutine(this.CreateTask());
